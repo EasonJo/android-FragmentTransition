@@ -1,7 +1,27 @@
 Android FragmentTransition Sample
 ===================================
 
-This sample demonstrates how to start a transition right after a fragment transaction.
+This sample demonstrates how to start a Transition after a Fragment Transaction.
+
+Introduction
+------------
+
+This sample uses [the Transition framework][1] to show a nice visual effect on
+Fragment Transaction.
+
+Animation for fragment _transaction_ can be customized by overriding
+[onCreateAnimation][2]. In this sample, we set up an AnimationListener
+for this Animation, and start our Transition on [onAnimationEnd][3].
+
+Transition is started by calling [TransitionManager.go][4]. We don't
+instantiate a Scene for the initial state of Transition, as we never
+go back. One thing we need to be careful here is that we need to
+populate the content of Views after starting the Transition.
+
+[1]: https://developer.android.com/reference/android/transition/package-summary.html
+[2]: http://developer.android.com/reference/android/support/v4/app/Fragment.html#onCreateAnimation(int, boolean, int)
+[3]: http://developer.android.com/reference/android/view/animation/Animation.AnimationListener.html#onAnimationEnd(android.view.animation.Animation)
+[4]: http://developer.android.com/reference/android/transition/TransitionManager.html#go(android.transition.Scene)
 
 Pre-requisites
 --------------
@@ -9,6 +29,11 @@ Pre-requisites
 - Android SDK v21
 - Android Build Tools v21.1.1
 - Android Support Repository
+
+Screenshots
+-------------
+
+<img src="screenshots/grid.png" height="400" alt="Screenshot"/> <img src="screenshots/main.png" height="400" alt="Screenshot"/> 
 
 Getting Started
 ---------------
